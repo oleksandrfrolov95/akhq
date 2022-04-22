@@ -1,7 +1,7 @@
 # imagePullSecrets:
 #  - name: my-repository-secret
 image:
-  repository: ghcr.io/oleksandrfrolov95/akhq/akhq
+  repository: armdocker.rnd.ericsson.se/proj-eea-drop/akhq
   tag: "0.20.0" # uses Chart.AppVersion by default
 
 # custom annotations (example: for prometheus)
