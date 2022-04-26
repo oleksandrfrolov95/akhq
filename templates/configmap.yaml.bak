@@ -1,3 +1,4 @@
+{{- if .Values.configuration }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -9,11 +10,5 @@ metadata:
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 data:
   application.yml: |
-    akhq:
-      connections:
-        kafka:
-          properties:
-            bootstrap.servers: "{{ .Values.kafkaServer }}:9092"
-          schema-registry:
-            url: "http://{{ .Values.schemaRegistry }}:8081"
-
+{{ toYaml .Values.configuration | indent 4}}
+{{- end }}
